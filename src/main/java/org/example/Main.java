@@ -54,6 +54,13 @@ public class Main {
         System.out.println("Current date plus 2 weeks: " + add2WeeksToCurrentDate());
         System.out.println("Is current date before specified date: " + isCurrentDateBeforeSpecifiedDate());
         System.out.println("Get out days between two dates: " + getDifferenceOfDays());
+
+        //Method Call from Bonus
+        Animal animal1 = new Animal("Baghira", LocalDate.of(2017, 11, 3));
+        Animal animal2 = new Animal("Django", LocalDate.of(2019, 8, 12));
+
+        animal1.printBirthdayMemory();
+        animal2.printBirthdayMemory();
     }
 
     //Challenges
