@@ -7,6 +7,7 @@ import java.time.temporal.ChronoUnit;
 public class Main {
     public static void main(String[] args) {
 
+        //Lecture examples
         //LocalDate = nur Datum
         LocalDate localDate = LocalDate.now();
         System.out.println("LocalDate: " + localDate);
@@ -15,7 +16,7 @@ public class Main {
         LocalDateTime localDateTime = LocalDateTime.now();
         System.out.println("LocalDateTime: " + localDateTime);
 
-        //ZonedDateTime =============== Datum & Uhrzeit & Zeitzone
+        //ZonedDateTime = Datum & Uhrzeit & Zeitzone
         ZonedDateTime zonedDateTime = ZonedDateTime.now();
         System.out.println("ZonedDateTime: " + zonedDateTime);
 
@@ -34,7 +35,7 @@ public class Main {
         System.out.println("ConvertedInstant: " + convertedInstant);
 
         //Format der Zeitangabe anpassen
-        //d = Tag | M = Monat | y = Jahr |H = Stunde | m= Minute | s = Sekunde | n = nano
+        //d = Tag | M = Monat | y = Jahr | H = Stunde | m= Minute | s = Sekunde | n = nano
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd.MMMM.yyyy");
         System.out.println(localDateTime.format(formatter));
 
@@ -49,12 +50,14 @@ public class Main {
         long minutesBetween = ChronoUnit.MINUTES.between(start, finish); //nimmt kompletten Zeitraum in minuten -> nanosekunden berechnen und dann in h:m:s umrechnen
         System.out.println("hours between start and finish: " + hoursBetween);
 
+        //Challenges
         //Call methods from Challenges
         System.out.println("Current date and time: " + getCurrentDateAndTime());
         System.out.println("Current date plus 2 weeks: " + add2WeeksToCurrentDate());
         System.out.println("Is current date before specified date: " + isCurrentDateBeforeSpecifiedDate());
         System.out.println("Get out days between two dates: " + getDifferenceOfDays());
 
+        
         //Method Call from Bonus
         Animal animal1 = new Animal("Baghira", LocalDate.of(2017, 11, 3));
         Animal animal2 = new Animal("Django", LocalDate.of(2019, 8, 12));
