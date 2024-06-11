@@ -71,7 +71,7 @@ public class Main {
     //current date is before or after the specified date.
     private static boolean isCurrentDateBeforeSpecifiedDate() {
         LocalDateTime futureDate = add2WeeksToCurrentDate();
-        return ChronoUnit.DAYS.between(getCurrentDateAndTime(), futureDate) > 0;
+        return getCurrentDateAndTime().isBefore(futureDate);
     }
 
     //Step 4: Calculate the difference in days between two arbitrary dates and output the result.
