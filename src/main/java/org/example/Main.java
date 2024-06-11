@@ -48,5 +48,36 @@ public class Main {
         long hoursBetween = ChronoUnit.HOURS.between(start, finish);
         long minutesBetween = ChronoUnit.MINUTES.between(start, finish); //nimmt kompletten Zeitraum in minuten -> nanosekunden berechnen und dann in h:m:s umrechnen
         System.out.println("hours between start and finish: " + hoursBetween);
+
+        //Call methods from Challenges
+        System.out.println("Current date and time: " + getCurrentDateAndTime());
+        System.out.println("Current date plus 2 weeks: " + add2WeeksToCurrentDate());
+        System.out.println("Is current date before specified date: " + isCurrentDateBeforeSpecifiedDate());
+        System.out.println("Get out days between two dates: " + getDifferenceOfDays());
+    }
+
+    //Challenges
+    //Step 1: Write code to output the current date and time.
+    private static LocalDateTime getCurrentDateAndTime() {
+        return LocalDateTime.now();
+    }
+
+    //Step 2: Add a timespan of 2 weeks to the current date and output the new date.
+    private static LocalDateTime add2WeeksToCurrentDate() {
+        return getCurrentDateAndTime().plusWeeks(2);
+    }
+
+    //Step 3: Compare the current date with a specified future date and output whether the
+    //current date is before or after the specified date.
+    private static boolean isCurrentDateBeforeSpecifiedDate() {
+        LocalDateTime futureDate = add2WeeksToCurrentDate();
+        return ChronoUnit.DAYS.between(getCurrentDateAndTime(), futureDate) > 0;
+    }
+
+    //Step 4: Calculate the difference in days between two arbitrary dates and output the result.
+    private static long getDifferenceOfDays() {
+        LocalDateTime start = getCurrentDateAndTime().minusWeeks(3);
+        LocalDateTime end = add2WeeksToCurrentDate();
+        return ChronoUnit.DAYS.between(start, end);
     }
 }
